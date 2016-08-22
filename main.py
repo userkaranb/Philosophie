@@ -1,9 +1,18 @@
+<<<<<<< HEAD
 from copy import copy
 
 def GetPasswordStrength(password):
     newPassword = ReplaceLongestSubstringWithASingleCharacter(password)
     numberOfCharacterTypes = GetNumberOfCharacterTypes(newPassword)
     return len(newPassword) * numberOfCharacterTypes
+=======
+
+def GetPasswordStrength(password):
+    newPassword = ReplaceLongestSubstringWithASingleCharacter(password)
+    # Count number of characters in new substring
+    # Calculate score
+    # Display to user
+>>>>>>> origin/master
 
 def GetLongestSubstring(password):
     counter = 0
@@ -28,6 +37,7 @@ def GetLongestSubstring(password):
 
 def ReplaceLongestSubstringWithASingleCharacter(password):
     longestSubstring = GetLongestSubstring(password)
+<<<<<<< HEAD
     passCopy = copy(password)
     passCopy = passCopy.replace(longestSubstring, 'x')
     return passCopy
@@ -44,3 +54,7 @@ def GetNumberOfCharacterTypes(password):
         else:
             types.update(['other'])
     return len(types)
+=======
+    password.replace(longestSubstring, 'x')
+    return password
+>>>>>>> origin/master
