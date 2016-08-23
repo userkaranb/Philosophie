@@ -1,0 +1,11 @@
+PasswordScoring Program:
+
+How to run:
+
+in a command line, type in python <path to main.py in the folder. It is sibling to all necessary modules and files>. You can optionally provide a text file as an argument to input your own dictionary. If you do not provide one, it will default to the dictionary saved in the folder. Additionally, you can run the unittests provided by typing python <path to unittests.py>. I did not use any unit testing libraries, (I could have used unittest or nose), because I wanted this to be able to run on any users machine without them having to download and install the necessary packages.
+
+When opening the main.py file, a user is greeted with a prompt to enter text. The text would be a password that he/she wishes to get a score for, and when pressing enter, will receive the score as well as the classification (unacceptable, weak, or strong). Until the user types 'quit', he or she will continually be asked for passwords.
+
+Implementation Details/Decisions:
+
+I chose to write this in python, a language well sutied for quick utility programs like such. It is also easy to set up an environment, and test out basic built in functions easily. I created one class responsible for Password scoring. Most of the methods COULD be static, but I chose to inject the dictionary into the class to make for easier, lighter unit testing. We should not assume there to be one dictionary that is the source of truth, we will let the user decide that (and unit tests). Given that different PasswordScorers could have different dictionaries, we need to create instances. Each method has a few unit tests to ensure they work as expected.
